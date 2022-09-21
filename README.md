@@ -10,11 +10,12 @@ The basic skeleton is there, the Node client and server run, there is a Sqlite D
 currently used), and the client can call the backend. But other than a most basic login page, there
 is nothing else. I only got the environment working on Wednesday.
 
+<pre>
 node/nodemon src/server.js  -- start the server
 npm start                   -- start the client
 
 client is at http://localhost:3000/
-
+</pre>
 
 # Getting Started with Create React App
 
