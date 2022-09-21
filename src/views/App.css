@@ -1,0 +1,47 @@
+.App {
+}
+
+.App-logo {
+  pointer-events: none;
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+}
+
+.App-header-title {
+  font-size: x-large;
+  padding-left: 2em;
+}
+
+main.App-main {
+  min-height: 100vh;
+}
+
+.App-Main-login .label {
+  font-size: larger;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+}
+
+.App-Main-login div.userName {
+  margin-bottom: 10px;
+  width: auto;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+}
+
+.App-Main-login input.userName {
+  font-size: large;
+}
+
+.App-Main-login div.password {
+  margin-bottom: 10px;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+}
+
+.App-Main-login input.password {
+  font-size: large;
+}
