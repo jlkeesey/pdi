@@ -1,27 +1,35 @@
 /**
- * The base server application implmented in Express.
+ * The base server application implemented in Express.
  */
 
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
-const DB = require('./api/database.js')
-const login = require('./api/login.js')
+import express from 'express';
+import cors from 'cors';
+import path from 'path';
+import Database from './db/database.js';
+import login from './api/login.js';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import Dao from "./db/dao/Dao.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json());
 app.use(cors());
 
+const DB = new Database();
+Dao.setDb(DB);
+
 app.get('/ping', function (req, res) {
     return res.status(200).json({'ping': 'pong'});
 });
 
 app.post('/api/login', function (req, res) {
-    const userId = login(req.body.userName, req.body.password)
-    console.log(`@@@@ userId = ${userId}`);
-    if (userId !== 0) {
-        return res.status(200).json({userId: userId});
+    const user = login(req.body.userName, req.body.password)
+    if (user) {
+        return res.status(200).json({userId: user.userId});
     } else {
         return res.status(401).json({});
     }
@@ -33,6 +41,12 @@ app.get('/api/deleteDB', function (req, res) {
 });
 
 app.get('/api/createDB', function (req, res) {
+    DB.createDB()
+    return res.json({'success': true});
+});
+
+app.get('/api/recreateDB', function (req, res) {
+    DB.deleteDB()
     DB.createDB()
     return res.json({'success': true});
 });

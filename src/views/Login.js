@@ -1,6 +1,6 @@
 import './Login.css';
 import React, {useState} from 'react';
-import {login} from './api';
+import {login} from './api.js';
 
 /**
  * Login component comprising the username, password, and submit button.
@@ -22,7 +22,6 @@ function Login(props) {
         e.target.disabled = true;
         login(userName, password,
             (userId) => {
-                console.log(`Login success: userId=${userId}`);
                 e.target.disabled = false;
                 props.setUser(userId);
             },

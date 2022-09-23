@@ -24,7 +24,6 @@ export function login(userName, password, successCB, failedCB) {
         body: JSON.stringify({userName: userName, password: password})
     }).then((res) => {
         const status = res.status;
-        console.log(`post(${path}) status: ${status}`);
         if (status !== 200) {
             failedCB(status);
             throw new LoginError("Login failure", status);

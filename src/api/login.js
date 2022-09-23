@@ -1,3 +1,5 @@
+import Dao from "../db/dao/Dao.js";
+
 /**
  * Defines the server-side login function. Eventually this will access the DB to retrieve
  * the user info.
@@ -7,17 +9,13 @@
  *
  * @param userName the username to validate.
  * @param password the password to validate.
- * @returns {number} the user id if the credentials are valid, 0 otherwise.
+ * @returns {User} the matching User if the credentials are valid, undefined otherwise.
  */
-function login(userName, password) {
-    console.log(`@@@@ userName: "${userName}"  password: "${password}"`)
-    if (userName === password) {
-        console.log(`@@@@ userName === password`)
-        return 1234;
+export default function login(userName, password) {
+    const user = Dao.user.findByName(userName);
+    if (user && user.password === password) {
+        return user;
     } else {
-        console.log(`@@@@ userName !== password`)
-        return 0;
+        return undefined;
     }
 }
-
-module.exports = login;
