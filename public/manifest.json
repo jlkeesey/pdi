@@ -18,8 +18,8 @@
       "sizes": "512x512"
     },
     {
-      "src": "porsche-marque-trademark.medium.min.webp",
-      "type": "image/webp"
+      "src": "app.svg",
+      "type": "image/svg"
     }
   ],
   "start_url": ".",

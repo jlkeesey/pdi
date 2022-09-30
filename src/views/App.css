@@ -3,6 +3,8 @@
 
 .App-logo {
   pointer-events: none;
+  height: 150px;
+  
 }
 
 .App-header {

@@ -10,8 +10,8 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <img src="porsche-marque-trademark.medium.min.webp" className="App-logo" alt="logo"/>
-                <span className="App-header-title">Porsche ‘Hunter’</span>
+                <img src="app.svg" className="App-logo" alt="logo"/>
+                <span className="App-header-title">Hunter</span>
             </header>
             <main className="App-main">
                 <Main/>

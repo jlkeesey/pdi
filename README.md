@@ -1,22 +1,3 @@
-# Hunter
-
-This is the beginnings of the application requested. I am sorry that it is not as nearly as done
-as I would like, but honestly, I had a hard week. Also, I spent a great deal of time just setting
-up the environment as I haven't done NodeJs/ReactJS development on my personal machine in a long
-time, it has always been on company computers. That took longer than expected as all previous 
-development has been on Linux or Mac.
-
-The basic skeleton is there, the Node client and server run, there is a Sqlite DB (though not
-currently used), and the client can call the backend. But other than a most basic login page, there
-is nothing else. I only got the environment working on Wednesday.
-
-<pre>
-node/nodemon src/server.js  -- start the server
-npm start                   -- start the client
-
-client is at http://localhost:3000/
-</pre>
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,9 +1,10 @@
 import './App.css';
 import Login from './Login.js';
+import First from './First.js';
 import React, {useState} from 'react';
 
 /**
- * Main panelfor the application. Starts displaying the Login panel and then once the user is logged
+ * Main panel for the application. Starts displaying the Login panel and then once the user is logged
  * in, displays the application and its data.
  */
 function Main() {
@@ -11,7 +12,7 @@ function Main() {
     if (!user) {
         return (<Login setUser={setUser}/>);
     } else {
-        return (<div className="App-Main"></div>);
+        return (<First/>);
     }
 }
 
